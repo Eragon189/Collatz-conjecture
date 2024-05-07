@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang = "en">
+<head>
+<head/>
+<body>
+<div id="output">Collatz conjecture<br></div>
+<style>
+#output {
+  color: blue; 
+}
+</style>
+<script>
+var number = 1;
+var output;
+var re = 10 ^ 100 ^ 100;
+for (let i = 0; i < re; i++) {
+  //check if the number is even
+  
+  if (number % 2 == 0) {
+    output = number / 2
+  }
+
+  // if the number is odd
+  else {
+    output = (number * 3) + 1
+
+  }
+}
+if (output == 1) {
+  output = 0
+  number++
+}
+if (output !== 1 || output !== 2 || output !== 4) {
+  document.getElementById("output").innerHTML += (number + "<br>" )
+  output = 1
+}
+</script>
+</body>
+</html>
